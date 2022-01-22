@@ -1,0 +1,9 @@
+.btn-vm {
+    color: rgba(255, 255, 255);
+    background-color: #846dcf;
+}
+
+.btn-vm:hover {
+    color: rgba(255, 255, 255);
+    background-color: #765ec4;
+}
