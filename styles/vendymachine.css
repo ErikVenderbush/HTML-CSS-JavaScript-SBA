@@ -1,9 +1,26 @@
 .btn-vm {
     color: rgba(255, 255, 255);
-    background-color: #846dcf;
+    background-color: #765ec4;
 }
 
 .btn-vm:hover {
     color: rgba(255, 255, 255);
-    background-color: #765ec4;
+    background-color: #8f77d9; <!-- 957ede 846dcf -->
+}
+
+#login:hover {
+    color: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 0 0.75rem rgba(27, 17, 59));
+}
+
+div > h1, div > h2 {
+    font: Verdana;
+}
+
+.shadow-vm {
+    box-shadow: 0 0.2rem 3rem rgba(228, 228, 255, 0.25) !important;
+}
+
+.shadow-vm-sm {
+    box-shadow: -0.25rem 0.15rem .5rem rgba(228, 228, 255, 0.25) !important;
 }
