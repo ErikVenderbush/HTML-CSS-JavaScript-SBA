@@ -33,7 +33,7 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        .navbar-brand:hover, .navbar-dark .navbar-nav .nav-link:hover {
+        .navbar-brand:hover, .navbar-brand:focus, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
             color: rgba(255, 255, 255, 0.9);
             filter: drop-shadow(0 0 0.2rem rgba(27, 17, 59));
         }
@@ -42,6 +42,64 @@
             border-width: 0;
             background-color: rgba(228, 228, 255, 0.2);
             box-shadow: inset 0 .5em 1.5em rgba(67, 46, 125, .25), inset 0 .125em 1.2em rgba(67, 46, 125, .65); <!--69, 45, 138 | 55, 36, 110 | 2E1A47/46, 26, 71 -->
+        }
+
+        tr.collapsed + tr > .hidden-row {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+        .form-control-sm, .form-select-sm {
+            background-color: #6c757d;
+            border-radius: 0.25rem;
+            border-width: 1px;
+        }
+
+        .form-control-sm::placeholder {
+            color: rgba(228, 228, 255);
+        }
+
+        .btn-sm {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border: 1px solid transparent;
+            border-color: #cdcdcd;
+        }
+
+        .btn-group>.btn-sm:not(:last-child):not(.dropdown-toggle) {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0.25rem;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+        .btn-group>.btn-sm:nth-child(n+3){
+            border-top-right-radius: 0.25rem;
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0;
+        }
+
+        .btn-outline-success, .btn-outline-secondary {
+            color: #cdcdcd;
         }
     </style>
 </head>
@@ -94,9 +152,11 @@
                 <svg class="bi text-light" width="40" height="40"><use xlink:href="#twitch"/></svg>
             </a>
             <ul class="dropdown-menu dropdown-menu-end bg-dark text-small shadow-vm-sm" aria-labelledby="login">
+                <li><p class="dropdown-item disabled text-light">Logged in as <br><strong style="color: #a291ed;">VendyDev</strong></p></li>
+                <li><hr class="dropdown-divider text-light"></li>
                 <li><a class="dropdown-item text-light" href="#">Settings</a></li>
                 <li><hr class="dropdown-divider text-light"></li>
-                <li><a class="dropdown-item text-light" href="#">Sign out</a></li>
+                <li><a class="dropdown-item text-light" href="../index.html">Sign out</a></li>
             </ul>
         </div>
     </div>
@@ -105,10 +165,125 @@
 <main>
     <div class="container">
         <div class="bg-dark p-5 rounded">
-            <h1>Commands</h1>
-            <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
-            <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
+            <h1 class="display-4 fw-bold">Commands</h1>
         </div>
+
+        <!-- Accordion Table of Commands; click on a row to view customization options -->
+        <table class="table table-vm table-striped mb-5" id="accordionTable">
+            <thead>
+                <tr>
+                    <th colspan="3" width="30%">Command</th>
+                    <th colspan="7" width="70%">Response</th>
+                </tr>
+            </thead>
+            <tbody class="accordion">
+                <tr class="collapsed" data-bs-toggle="collapse" data-bs-target=".accordion1">
+                    <td colspan="3">!game</td>
+                    <td colspan="7">$(game)</td>
+                </tr>
+                <tr>
+                    <td class="hidden-row" colspan="3">
+                        <div class="accordion-collapse collapse accordion1">
+                            <label for="!game-p">Permission:</label>
+                            <select class="form-select-sm" id="!game-p">
+                                <option value="Everyone">Everyone</option>
+                                <option value="Subscriber">Subscriber</option>
+                                <option value="VIP">VIP</option>
+                                <option value="Moderator">Moderator</option>
+                                <option value="Broadcaster">Broadcaster</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td class="hidden-row" colspan="3">
+                        <div class="accordion-collapse collapse accordion1">
+                            <label for="!game-c">Cooldown (min):</label>
+                            <input type="number" class="form-control-sm" id="!game-c" name="!game-c" value="Cooldown" min="0" max="60" placeholder="0">
+                        </div>
+                    </td>
+                    <td class="hidden-row" colspan="3">
+                        <div class="accordion-collapse collapse accordion1">
+                            <label>Enabled:</label>
+                            <div class="btn-group" role="group">
+                                <input type="radio" class="btn-check" name="!game-e" id="!game-e-t" value="True" autocomplete="off" checked>
+                                <label class="btn-sm btn-outline-success" for="!game-e-t">True</label>
+                                <input type="radio" class="btn-check" name="!game-e" id="!game-e-f" value="False" autocomplete="off">
+                                <label class="btn-sm btn-outline-secondary" for="!game-e-f">False</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="collapsed" data-bs-toggle="collapse" data-bs-target=".accordion2">
+                    <td colspan="3">!title</td>
+                    <td colspan="7">$(title)</td>
+                </tr>
+                <tr>
+                    <td class="hidden-row" colspan="3">
+                        <div class="accordion-collapse collapse accordion2">
+                            <label for="!title-p">Permission:</label>
+                            <select class="form-select-sm" id="!title-p">
+                                <option value="Everyone">Everyone</option>
+                                <option value="Subscriber">Subscriber</option>
+                                <option value="VIP">VIP</option>
+                                <option value="Moderator">Moderator</option>
+                                <option value="Broadcaster">Broadcaster</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td class="hidden-row" colspan="3">
+                        <div class="accordion-collapse collapse accordion2">
+                            <label for="!title-c">Cooldown (min):</label>
+                            <input type="number" class="form-control-sm" id="!title-c" name="!title-c" value="Cooldown" min="0" max="60" placeholder="0">
+                        </div>
+                    </td>
+                    <td class="hidden-row" colspan="3" width="30%">
+                        <div class="accordion-collapse collapse accordion2">
+                            <label>Enabled:</label>
+                            <div class="btn-group" role="group">
+                                <input type="radio" class="btn-check" name="!title-e" id="!title-e-t" value="True" autocomplete="off" checked>
+                                <label class="btn-sm btn-outline-success" for="!title-e-t">True</label>
+                                <input type="radio" class="btn-check" name="!title-e" id="!title-e-f" value="False" autocomplete="off">
+                                <label class="btn-sm btn-outline-secondary" for="!title-e-f">False</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="collapsed" data-bs-toggle="collapse" data-bs-target=".accordion3">
+                    <td colspan="3">!ping</td>
+                    <td colspan="7">pong!</td>
+                </tr>
+                <tr>
+                    <td class="hidden-row" colspan="3" width="30%">
+                        <div class="accordion-collapse collapse accordion3">
+                            <label for="!ping-p">Permission:</label>
+                            <select class="form-select-sm" id="!ping-p">
+                                <option value="Everyone">Everyone</option>
+                                <option value="Subscriber">Subscriber</option>
+                                <option value="VIP">VIP</option>
+                                <option value="Moderator">Moderator</option>
+                                <option value="Broadcaster">Broadcaster</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td class="hidden-row" colspan="3" width="30%">
+                        <div class="accordion-collapse collapse accordion3">
+                            <label for="!ping-c">Cooldown (min):</label>
+                            <input type="number" class="form-control-sm" id="!ping-c" name="!ping-c" value="Cooldown" min="0" max="60" placeholder="0">
+                        </div>
+                    </td>
+                    <td class="hidden-row" colspan="3" width="30%">
+                        <div class="accordion-collapse collapse accordion3">
+                            <label>Enabled:</label>
+                            <div class="btn-group" role="group">
+                                <input type="radio" class="btn-check" name="!ping-e" id="!ping-e-t" value="True" autocomplete="off" checked>
+                                <label class="btn-sm btn-outline-success" for="!ping-e-t">True</label>
+                                <input type="radio" class="btn-check" name="!ping-e" id="!ping-e-f" value="False" autocomplete="off">
+                                <label class="btn-sm btn-outline-secondary" for="!ping-e-f">False</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="b-example-divider"></div>
@@ -141,10 +316,22 @@
 
 <!-- Adds text-light class to specific elements -->
 <script>
-    let selectors = document.querySelectorAll('div>h1, div>h2, div>p');
+    let selectors = document.querySelectorAll('div>h1, div>h2, div>h5, div>p, form>p, .form-select-sm, .form-control-sm');
     for (s in selectors) {
-        if (!selectors[s].matches('.text-light')) {
+        if (selectors[s].getAttribute('class') == null) {
+            selectors[s].setAttribute('class', 'text-light');
+        } else if (!selectors[s].matches('.text-light')) {
             selectors[s].setAttribute('class', selectors[s].getAttribute('class') + ' text-light');
+        }
+    }
+</script>
+
+<!-- Adds border-light class to specific elements -->
+<script>
+    let forms = document.querySelectorAll('.form-select-sm, .form-control-sm');
+    for (s in forms) {
+        if (!forms[s].matches('.border-light')) {
+            forms[s].setAttribute('class', forms[s].getAttribute('class') + ' border-light');
         }
     }
 </script>

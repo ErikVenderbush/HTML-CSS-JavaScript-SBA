@@ -33,9 +33,13 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        .navbar-brand:hover, .navbar-dark .navbar-nav .nav-link:hover {
+        .navbar-brand:hover, .navbar-brand:focus, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
             color: rgba(255, 255, 255, 0.9);
             filter: drop-shadow(0 0 0.2rem rgba(27, 17, 59));
+        }
+
+        #login {
+            margin-right: 1.15rem;
         }
 
         .b-example-divider {
@@ -57,6 +61,37 @@
         <path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z"/>
     </symbol>
 </svg>
+
+<!-- Login Modal -->
+<div class="modal fade" id="connect" tabindex="-1" aria-labelledby="loginModalTitle" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalTitle">Login with Twitch</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="needs-validation" action="#" method="post" novalidate>
+                <div class="modal-body">
+                    <p>In practice this will open an OAuth tab to connect your Twitch account, but for now test out some regex ツ</p>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-4" placeholder="name@example.com" id="loginEmail" required pattern="^[a-zA-Z\d][a-zA-Z\d\.]+@[a-zA-Z\d]+\.[a-zA-Z]+$">
+                        <label for="loginEmail">Email address</label>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control rounded-4" placeholder="Password" id="loginPassword" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$">
+                        <label for="loginPassword">Password</label>
+                        <div class="invalid-feedback">Passwords must be 8-20 characters and contain at least one uppercase letter, one lowercase letter, and one number.</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-vm">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- Creates fixed navigation bar -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #765ec4;">
@@ -89,18 +124,20 @@
         </div>
 
         <!-- Twitch Login -->
-        <a class="btn btn-default" data-bs-toggle="tooltip" title="Login with Twitch" role="button" href="#" id="login">
-            <svg class="bi text-light" width="40" height="40"><use xlink:href="#twitch"/></svg>
-        </a>
+        <div data-bs-toggle="tooltip" data-bs-placement="left" title="Login with Twitch">
+            <a class="btn btn-default" role="button" id="login" data-bs-toggle="modal" data-bs-target="#connect">
+                <svg class="bi text-light" width="40" height="40"><use xlink:href="#twitch"/></svg>
+            </a>
+        </div>
     </div>
 </nav>
 
 <main>
     <div class="container">
         <div class="bg-dark p-5 rounded">
-            <h1>About</h1>
-            <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
-            <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
+            <h1 class="display-4 fw-bold">About</h1>
+            <p class="lead">Another placeholder for the about and thank you section.</p>
+            <a class="btn btn-lg btn-vm" role="button">無効</a>
         </div>
     </div>
 
@@ -132,9 +169,32 @@
     })
 </script>
 
+<!-- Sorts out custom validation -->
+<script>
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+            form.classList.add('was-validated')
+        }, false)
+        })
+    })()
+</script>
+
 <!-- Adds text-light class to specific elements -->
 <script>
-    let selectors = document.querySelectorAll('div>h1, div>h2, div>p');
+    let selectors = document.querySelectorAll('div>h1, div>h2, div>h5, div>p, form>p');
     for (s in selectors) {
         if (!selectors[s].matches('.text-light')) {
             selectors[s].setAttribute('class', selectors[s].getAttribute('class') + ' text-light');

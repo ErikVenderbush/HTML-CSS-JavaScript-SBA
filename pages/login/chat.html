@@ -33,7 +33,7 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        .navbar-brand:hover, .navbar-dark .navbar-nav .nav-link:hover {
+        .navbar-brand:hover, .navbar-brand:focus, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
             color: rgba(255, 255, 255, 0.9);
             filter: drop-shadow(0 0 0.2rem rgba(27, 17, 59));
         }
@@ -96,9 +96,11 @@
                 <svg class="bi text-light" width="40" height="40"><use xlink:href="#twitch"/></svg>
             </a>
             <ul class="dropdown-menu dropdown-menu-end bg-dark text-small shadow-vm-sm" aria-labelledby="login">
+                <li><p class="dropdown-item disabled text-light">Logged in as <br><strong style="color: #a291ed;">VendyDev</strong></p></li>
+                <li><hr class="dropdown-divider text-light"></li>
                 <li><a class="dropdown-item text-light" href="#">Settings</a></li>
                 <li><hr class="dropdown-divider text-light"></li>
-                <li><a class="dropdown-item text-light" href="#">Sign out</a></li>
+                <li><a class="dropdown-item text-light" href="../index.html">Sign out</a></li>
             </ul>
         </div>
     </div>
@@ -118,6 +120,16 @@
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
+</script>
+
+<!-- Adds text-light class to specific elements -->
+<script>
+    let selectors = document.querySelectorAll('div>h1, div>h2, div>h5, div>p, form>p');
+    for (s in selectors) {
+        if (!selectors[s].matches('.text-light')) {
+            selectors[s].setAttribute('class', selectors[s].getAttribute('class') + ' text-light');
+        }
+    }
 </script>
 
 <!-- Script to have chat fill page height without being covered by navbar -->
