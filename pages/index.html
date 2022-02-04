@@ -2,286 +2,324 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Erik Venderbush and Bootstrap contributors">
-    <title>Welcome! - VendyMachine</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../images/OhNo.png">
-
-    <!-- Bootstrap CSS imports -->
-    <link href="../styles/bootstrap-5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../styles/bootstrap-5.1.3/css/features.css" rel="stylesheet">
-    <link href="../styles/bootstrap-5.1.3/css/footers.css" rel="stylesheet">
-    <link href="../styles/bootstrap-5.1.3/css/heroes.css" rel="stylesheet">
-
-    <!-- Custom CSS imports -->
-    <link href="../styles/vendymachine.css" rel="stylesheet">
-
-    <!-- Mainly modifying/overriding Bootstrap defaults; some custom -->
-    <style>
-        body {
-            padding-top: 4.5rem;
-        }
-
-        .navbar-brand {
-            margin-left: 5px;
-            <!-- For use once I create a logo -->
-<!--            background-image: url(../images/VMLogo.png);-->
-        }
-
-        .navbar-dark .navbar-nav .nav-link {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .navbar-brand:hover, .navbar-brand:focus, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-            color: rgba(255, 255, 255, 0.9);
-            filter: drop-shadow(0 0 0.2rem rgba(27, 17, 59));
-        }
-
-        #login {
-            margin-right: 1.15rem;
-        }
-
-        .btn-close {
-            background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
-        }
-
-        .btn-outline-secondary:focus {
-            color: #fff;
-            background-color: #6c757d;
-            border-color: #6c757d;
-        }
-
-        .b-example-divider {
-            border-width: 0;
-            background-color: rgba(228, 228, 255, 0.2);
-            box-shadow: inset 0 .5em 1.5em rgba(67, 46, 125, .25), inset 0 .125em 1.2em rgba(67, 46, 125, .65); <!--69, 45, 138 | 55, 36, 110 | 2E1A47/46, 26, 71 -->
-        }
-
-        .icon-square {
-            background-color: #765ec4;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Erik Venderbush and Bootstrap contributors">
+	<title>Welcome! - VendyMachine</title>
+	
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="../images/OhNo.png">
+	
+	<!-- Bootstrap CSS imports -->
+	<link href="../styles/bootstrap-5.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../styles/bootstrap-5.1.3/css/features.css" rel="stylesheet">
+	<link href="../styles/bootstrap-5.1.3/css/footers.css" rel="stylesheet">
+	<link href="../styles/bootstrap-5.1.3/css/heroes.css" rel="stylesheet">
+	
+	<!-- Custom CSS imports -->
+	<link href="../styles/vendymachine.css" rel="stylesheet">
+	
+	<!-- Mainly modifying/overriding Bootstrap defaults; some custom -->
+	<style>
+		body {
+			padding-top: 4.5rem;
+		}
+		
+		.navbar-brand {
+			margin-left: 5px;
+		<!-- For use once I create a logo --> <!-- background-image: url(../images/VMLogo.png);
+		-->
+		}
+		
+		.navbar-dark .navbar-nav .nav-link {
+			color: rgba(255, 255, 255, 0.5);
+		}
+		
+		.navbar-brand:hover, .navbar-brand:focus, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+			color: rgba(255, 255, 255, 0.9);
+			filter: drop-shadow(0 0 0.2rem rgba(27, 17, 59));
+		}
+		
+		#login {
+			margin-right: 1.15rem;
+		}
+		
+		.btn-close {
+			background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+		}
+		
+		.btn-outline-secondary:focus {
+			color: #fff;
+			background-color: #6c757d;
+			border-color: #6c757d;
+		}
+		
+		.b-example-divider {
+			border-width: 0;
+			background-color: rgba(228, 228, 255, 0.2);
+			box-shadow: inset 0 .5em 1.5em rgba(67, 46, 125, .25), inset 0 .125em 1.2em rgba(67, 46, 125, .65);
+		<!-- 69, 45, 138 | 55, 36, 110 | 2 E1A47 / 46, 26, 71 -->
+		}
+		
+		.icon-square {
+			background-color: #765ec4;
+		}
+	</style>
 </head>
 
 <body class="bg-dark">
-<!-- SVG imports -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="speedometer2" viewBox="0 0 16 16">
-        <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
-        <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
-    </symbol>
-    <symbol id="speedometer" viewBox="192.6 134.157 12.975 16">
-        <path fill-rule="evenodd" d="M 191.1 143.902 C 191.105 137.743 197.776 133.9 203.106 136.984 C 206.436 138.911 207.923 142.934 206.647 146.563 C 206.205 147.816 204.802 148.165 203.715 147.813 C 202.409 147.39 200.575 146.902 199.1 146.902 C 197.626 146.902 195.79 147.39 194.485 147.813 C 193.398 148.165 191.995 147.816 191.553 146.563 C 191.252 145.708 191.099 144.808 191.1 143.902 Z M 198.599 138.394 L 198.599 139.894 C 198.599 140.072 198.694 140.237 198.849 140.327 C 199.182 140.519 199.599 140.279 199.599 139.894 L 199.599 138.394 C 199.599 138.117 199.375 137.894 199.099 137.894 C 198.823 137.894 198.599 138.117 198.599 138.394 Z M 194.831 140.333 L 195.745 141.248 C 195.871 141.374 196.056 141.423 196.228 141.377 C 196.601 141.277 196.725 140.812 196.453 140.54 L 195.538 139.626 C 195.343 139.43 195.026 139.43 194.831 139.626 C 194.636 139.821 194.636 140.137 194.831 140.333 Z M 193.599 144.394 L 195.185 144.394 C 195.363 144.394 195.529 144.298 195.618 144.144 C 195.81 143.81 195.57 143.394 195.185 143.394 L 193.599 143.394 C 193.323 143.394 193.099 143.617 193.099 143.894 C 193.099 144.17 193.323 144.394 193.599 144.394 Z M 203.099 144.394 L 204.599 144.394 C 204.777 144.394 204.943 144.298 205.032 144.144 C 205.224 143.81 204.984 143.394 204.599 143.394 L 203.099 143.394 C 202.823 143.394 202.599 143.617 202.599 143.894 C 202.599 144.17 202.823 144.394 203.099 144.394 Z M 203.353 139.648 C 203.209 139.505 202.98 139.496 202.826 139.628 L 198.646 143.204 C 198.11 143.655 198.264 144.517 198.923 144.755 C 199.292 144.889 199.705 144.77 199.948 144.462 L 203.382 140.165 C 203.506 140.01 203.493 139.787 203.353 139.647 Z" style="paint-order: fill; stroke-opacity: 0; filter: none;"/>
-    </symbol>
-    <symbol id="excsquare" viewBox="0 0 16 16">
-        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-    </symbol>
-    <symbol id="chatdots" viewBox="0 0 16 16">
-        <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-        <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
-    </symbol>
-    <symbol id="chatdotsfill" viewBox="0 0 16 16">
-        <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-    </symbol>
-    <symbol id="github" viewBox="0 0 16 16">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-    </symbol>
-    <symbol id="twitch" viewBox="0 0 16 16">
-        <path d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0H3.857zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142v6.286z"/>
-        <path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z"/>
-    </symbol>
-</svg>
-
-<!-- Login Modal -->
-<div class="modal fade" id="connect" tabindex="-1" aria-labelledby="loginModalTitle" style="display: none;" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalTitle">Login with Twitch</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form class="needs-validation" action="#" method="post" novalidate>
-                <div class="modal-body">
-                    <p>In practice this will open an OAuth tab to connect your Twitch account, but for now test out some regex ツ</p>
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control rounded-4" placeholder="name@example.com" id="loginEmail" required pattern="^[a-zA-Z\d][a-zA-Z\d\.]+@[a-zA-Z\d]+\.[a-zA-Z]+$">
-                        <label for="loginEmail">Email address</label>
-                        <div class="invalid-feedback">Please enter a valid email address.</div>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="password" class="form-control rounded-4" placeholder="Password" id="loginPassword" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$">
-                        <label for="loginPassword">Password</label>
-                        <div class="invalid-feedback">Passwords must be 8-20 characters and contain at least one uppercase letter, one lowercase letter, and one number.</div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-vm">Login</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Creates fixed navigation bar -->
-<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #765ec4;"> <!-- 846dcf 765ec4 -->
-    <div class="container-fluid">
-        <!-- Chatbot Branding Logo -->
-        <a class="navbar-brand" aria-current="page" href="#"><h2>VM</h2></a>
-
-        <!-- Collapsible navigation items -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse" >
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="login/dashboard.html"><h5>Dashboard</h5></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login/commands.html"><h5>Commands</h5></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login/chat.html"><h5>Chat</h5></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="global/guide.html"><h5>Guide</h5></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="global/about.html"><h5>About</h5></a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Twitch Login -->
-        <div class="navbar-nav" data-bs-toggle="tooltip" data-bs-placement="left" title="Login with Twitch">
-            <a class="btn btn-default" role="button" id="login" data-bs-toggle="modal" data-bs-target="#connect">
-                <svg class="bi text-light" width="40" height="40"><use xlink:href="#twitch"/></svg>
-            </a>
-        </div>
-    </div>
-</nav>
-
-<main>
-    <!-- Summary Hero -->
-    <div class="px-4 pt-5 my-5 text-center border-bottom">
-        <h1 class="display-4 fw-bold text-light">VendyMachine</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">A simple Twitch Chatbot for handling commands, loyalty, and other services relating to your channel. Primary features include an info dashboard, custom commands, an external chat feed, and a loyalty system. Plans to implement game plugins for Twitch-to-game communication are in the works!</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <button type="button" class="btn btn-vm btn-lg px-4 me-sm-3" data-bs-toggle="modal" data-bs-target="#connect">Connect with Twitch</button>
-                <a type="button" class="btn btn-outline-secondary btn-lg px-4" href="#features">Learn More</a>
-            </div>
-        </div>
-        <div class="overflow-hidden" style="max-height: 40vh;">
-            <div class="container px-5 pt-5">
-                <img src="../images/HeroPreview.png" class="img-fluid border rounded-3 shadow-vm mb-4" alt="Preview image" width="900" height="800" loading="lazy">
-            </div>
-        </div>
-    </div>
-
-    <div class="b-example-divider"></div>
-
-    <!-- Feature List -->
-    <div class="container px-4 py-5" id="features">
-        <h2 class="pb-2 border-bottom">Features</h2>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-            <div class="col d-flex align-items-start">
-                <div class="icon-square text-light flex-shrink-0 me-3">
-                    <svg class="bi" width="1.2em" height="1.2em"><use xlink:href="#speedometer"/></svg>
-                </div>
-                <div>
-                    <h2>Dashboard</h2>
-                    <p>A simple dashboard displaying some info and stats of your channel and livestream at a glance. Use it to monitor your stream or to check out those sweet, sweet numbers.</p>
-                    <a href="login/dashboard.html" class="btn btn-vm">Dashboard</a>
-                </div>
-            </div>
-            <div class="col d-flex align-items-start">
-                <div class="icon-square text-light flex-shrink-0 me-3">
-                    <svg class="bi" width="1.2em" height="1.2em"><use xlink:href="#excsquare"/></svg>
-                </div>
-                <div>
-                    <h2>Commands</h2>
-                    <p>Create, delete, and edit your commands all in one place. We give you a couple of default examples to get you started (don't worry, you can delete them).</p>
-                    <a href="login/commands.html" class="btn btn-vm">Commands</a>
-                </div>
-            </div>
-            <div class="col d-flex align-items-start">
-                <div class="icon-square text-light flex-shrink-0 me-3">
-                    <svg class="bi" width="1.2em" height="1.2em"><use xlink:href="#chatdotsfill"/></svg>
-                </div>
-                <div>
-                    <h2>Chat</h2>
-                    <p>A live chat mirrored from Twitch. Soon to feature customizable HTML/CSS/JS for use as a browser source.</p>
-                    <a href="login/chat.html" class="btn btn-vm">Chat</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="b-example-divider"></div>
-
-    <!-- Footer -->
-    <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center">
-                <span class="text-muted">Made by Erik with love</span>
-            </div>
-
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3"><a class="text-muted" href="https://github.com/ErikVenderbush" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#github"/></svg></a></li>
-                <li class="ms-3"><a class="text-muted" href="https://www.twitch.tv/vendydev" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#twitch"/></svg></a></li>
-            </ul>
-        </footer>
-    </div>
-</main>
-
-<!-- Bootstrap JS imports -->
-<script src="../scripts/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
-
-<!-- Enables tooltips -->
-<script>
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-</script>
-
-<!-- Sorts out custom validation -->
-<script>
-    (function () {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-            form.classList.add('was-validated')
-        }, false)
-        })
-    })()
-</script>
-
-<!-- Adds text-light class to specific elements -->
-<script>
-    let selectors = document.querySelectorAll('div>h1, div>h2, div>h5, div>p, form>p');
-    for (s in selectors) {
-        if (!selectors[s].matches('.text-light')) {
-            selectors[s].setAttribute('class', selectors[s].getAttribute('class') + ' text-light');
-        }
-    }
-</script>
+	<!-- SVG imports -->
+	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+		<symbol id="speedometer2" viewBox="0 0 16 16">
+			<path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+			<path fill-rule="evenodd"
+			      d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+		</symbol>
+		<symbol id="speedometer" viewBox="192.6 134.157 12.975 16">
+			<path fill-rule="evenodd"
+			      d="M 191.1 143.902 C 191.105 137.743 197.776 133.9 203.106 136.984 C 206.436 138.911 207.923 142.934 206.647 146.563 C 206.205 147.816 204.802 148.165 203.715 147.813 C 202.409 147.39 200.575 146.902 199.1 146.902 C 197.626 146.902 195.79 147.39 194.485 147.813 C 193.398 148.165 191.995 147.816 191.553 146.563 C 191.252 145.708 191.099 144.808 191.1 143.902 Z M 198.599 138.394 L 198.599 139.894 C 198.599 140.072 198.694 140.237 198.849 140.327 C 199.182 140.519 199.599 140.279 199.599 139.894 L 199.599 138.394 C 199.599 138.117 199.375 137.894 199.099 137.894 C 198.823 137.894 198.599 138.117 198.599 138.394 Z M 194.831 140.333 L 195.745 141.248 C 195.871 141.374 196.056 141.423 196.228 141.377 C 196.601 141.277 196.725 140.812 196.453 140.54 L 195.538 139.626 C 195.343 139.43 195.026 139.43 194.831 139.626 C 194.636 139.821 194.636 140.137 194.831 140.333 Z M 193.599 144.394 L 195.185 144.394 C 195.363 144.394 195.529 144.298 195.618 144.144 C 195.81 143.81 195.57 143.394 195.185 143.394 L 193.599 143.394 C 193.323 143.394 193.099 143.617 193.099 143.894 C 193.099 144.17 193.323 144.394 193.599 144.394 Z M 203.099 144.394 L 204.599 144.394 C 204.777 144.394 204.943 144.298 205.032 144.144 C 205.224 143.81 204.984 143.394 204.599 143.394 L 203.099 143.394 C 202.823 143.394 202.599 143.617 202.599 143.894 C 202.599 144.17 202.823 144.394 203.099 144.394 Z M 203.353 139.648 C 203.209 139.505 202.98 139.496 202.826 139.628 L 198.646 143.204 C 198.11 143.655 198.264 144.517 198.923 144.755 C 199.292 144.889 199.705 144.77 199.948 144.462 L 203.382 140.165 C 203.506 140.01 203.493 139.787 203.353 139.647 Z"
+			      style="paint-order: fill; stroke-opacity: 0; filter: none;"/>
+		</symbol>
+		<symbol id="excsquare" viewBox="0 0 16 16">
+			<path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+		</symbol>
+		<symbol id="chatdots" viewBox="0 0 16 16">
+			<path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+			<path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+		</symbol>
+		<symbol id="chatdotsfill" viewBox="0 0 16 16">
+			<path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+		</symbol>
+		<symbol id="github" viewBox="0 0 16 16">
+			<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+		</symbol>
+		<symbol id="twitch" viewBox="0 0 16 16">
+			<path d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0H3.857zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142v6.286z"/>
+			<path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z"/>
+		</symbol>
+	</svg>
+	
+	<!-- Login Modal -->
+	<div class="modal fade" id="connect" tabindex="-1" aria-labelledby="loginModalTitle" style="display: none;"
+	     aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content bg-dark">
+				<div class="modal-header">
+					<h5 class="modal-title" id="loginModalTitle">Login with Twitch</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<form class="needs-validation" action="#" method="post" novalidate>
+					<div class="modal-body">
+						<p>In practice this will open an OAuth tab to connect your Twitch account, but for now test out
+							some regex ツ</p>
+						<div class="form-floating mb-3">
+							<input type="email" class="form-control rounded-4" placeholder="name@example.com"
+							       id="loginEmail" required pattern="^[a-zA-Z\d][a-zA-Z\d\.]+@[a-zA-Z\d]+\.[a-zA-Z]+$">
+							<label for="loginEmail">Email address</label>
+							<div class="invalid-feedback">Please enter a valid email address.</div>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="password" class="form-control rounded-4" placeholder="Password"
+							       id="loginPassword" required
+							       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$">
+							<label for="loginPassword">Password</label>
+							<div class="invalid-feedback">Passwords must be 8-20 characters and contain at least one
+								uppercase letter, one lowercase letter, and one number.
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+						<button type="submit" class="btn btn-vm">Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Creates fixed navigation bar -->
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #765ec4;">
+		<!-- 846dcf 765ec4 -->
+		<div class="container-fluid">
+			<!-- Chatbot Branding Logo -->
+			<a class="navbar-brand" aria-current="page" href="#"><h2>VM</h2></a>
+			
+			<!-- Collapsible navigation items -->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+			        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav me-auto mb-2 mb-md-0">
+					<li class="nav-item">
+						<a class="nav-link" href="login/dashboard.html"><h5>Dashboard</h5></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login/commands.html"><h5>Commands</h5></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login/chat.html"><h5>Chat</h5></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="global/guide.html"><h5>Guide</h5></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="global/about.html"><h5>About</h5></a>
+					</li>
+				</ul>
+			</div>
+			
+			<!-- Twitch Login -->
+			<div class="navbar-nav" data-bs-toggle="tooltip" data-bs-placement="left" title="Login with Twitch">
+				<a class="btn btn-default" role="button" id="login" data-bs-toggle="modal" data-bs-target="#connect">
+					<svg class="bi text-light" width="40" height="40">
+						<use xlink:href="#twitch"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</nav>
+	
+	<main>
+		<!-- Summary Hero -->
+		<div class="px-4 pt-5 my-5 text-center border-bottom">
+			<h1 class="display-4 fw-bold text-light">VendyMachine</h1>
+			<div class="col-lg-6 mx-auto">
+				<p class="lead mb-4">A simple Twitch Chatbot for handling commands, loyalty, and other services relating
+					to your channel. Primary features include an info dashboard, custom commands, an external chat feed,
+					and a loyalty system. Plans to implement game plugins for Twitch-to-game communication are in the
+					works!</p>
+				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+					<button type="button" class="btn btn-vm btn-lg px-4 me-sm-3" data-bs-toggle="modal"
+					        data-bs-target="#connect">Connect with Twitch
+					</button>
+					<a type="button" class="btn btn-outline-secondary btn-lg px-4" href="#features">Learn More</a>
+				</div>
+			</div>
+			<div class="overflow-hidden" style="max-height: 40vh;">
+				<div class="container px-5 pt-5">
+					<img src="../images/HeroPreview.png" class="img-fluid border rounded-3 shadow-vm mb-4"
+					     alt="Preview image" width="900" height="800" loading="lazy">
+				</div>
+			</div>
+		</div>
+		
+		<div class="b-example-divider"></div>
+		
+		<!-- Feature List -->
+		<div class="container px-4 py-5" id="features">
+			<h2 class="pb-2 border-bottom">Features</h2>
+			<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+				<div class="col d-flex align-items-start">
+					<div class="icon-square text-light flex-shrink-0 me-3">
+						<svg class="bi" width="1.2em" height="1.2em">
+							<use xlink:href="#speedometer"/>
+						</svg>
+					</div>
+					<div>
+						<h2>Dashboard</h2>
+						<p>A simple dashboard displaying some info and stats of your channel and livestream at a glance.
+							Use it to monitor your stream or to check out those sweet, sweet numbers.</p>
+						<a href="login/dashboard.html" class="btn btn-vm">Dashboard</a>
+					</div>
+				</div>
+				<div class="col d-flex align-items-start">
+					<div class="icon-square text-light flex-shrink-0 me-3">
+						<svg class="bi" width="1.2em" height="1.2em">
+							<use xlink:href="#excsquare"/>
+						</svg>
+					</div>
+					<div>
+						<h2>Commands</h2>
+						<p>Create, delete, and edit your commands all in one place. We give you a couple of default
+							examples to get you started (don't worry, you can delete them).</p>
+						<a href="login/commands.html" class="btn btn-vm">Commands</a>
+					</div>
+				</div>
+				<div class="col d-flex align-items-start">
+					<div class="icon-square text-light flex-shrink-0 me-3">
+						<svg class="bi" width="1.2em" height="1.2em">
+							<use xlink:href="#chatdotsfill"/>
+						</svg>
+					</div>
+					<div>
+						<h2>Chat</h2>
+						<p>A live chat mirrored from Twitch. Soon to feature customizable HTML/CSS/JS for use as a
+							browser source.</p>
+						<a href="login/chat.html" class="btn btn-vm">Chat</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="b-example-divider"></div>
+		
+		<!-- Footer -->
+		<div class="container">
+			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+				<div class="col-md-4 d-flex align-items-center">
+					<span class="text-muted">Made by Erik with love</span>
+				</div>
+				
+				<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+					<li class="ms-3"><a class="text-muted" href="https://github.com/ErikVenderbush" target="_blank">
+						<svg class="bi" width="24" height="24">
+							<use xlink:href="#github"/>
+						</svg>
+					</a></li>
+					<li class="ms-3"><a class="text-muted" href="https://www.twitch.tv/vendydev" target="_blank">
+						<svg class="bi" width="24" height="24">
+							<use xlink:href="#twitch"/>
+						</svg>
+					</a></li>
+				</ul>
+			</footer>
+		</div>
+	</main>
+	
+	<!-- Bootstrap JS imports -->
+	<script src="../scripts/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+	
+	<!-- Enables tooltips -->
+	<script>
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+			return new bootstrap.Tooltip(tooltipTriggerEl)
+		})
+	</script>
+	
+	<!-- Sorts out custom validation -->
+	<script>
+		(function () {
+			'use strict'
+			
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.querySelectorAll('.needs-validation')
+			
+			// Loop over them and prevent submission
+			Array.prototype.slice.call(forms)
+					.forEach(function (form) {
+						form.addEventListener('submit', function (event) {
+							if (!form.checkValidity()) {
+								event.preventDefault()
+								event.stopPropagation()
+							}
+							
+							form.classList.add('was-validated')
+						}, false)
+					})
+		})()
+	</script>
+	
+	<!-- Adds text-light class to specific elements -->
+	<script>
+		let selectors = document.querySelectorAll('div>h1, div>h2, div>h5, div>p, form>p');
+		for (s in selectors) {
+			if (!selectors[s].matches('.text-light')) {
+				selectors[s].setAttribute('class', selectors[s].getAttribute('class') + ' text-light');
+			}
+		}
+	</script>
 </body>
 
 </html>
